@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define SPI_FLASH_CS_Pin GPIO_PIN_3
+#define SPI_FLASH_CS_GPIO_Port GPIOE
 #define U3_TX_Pin GPIO_PIN_8
 #define U3_TX_GPIO_Port GPIOD
 #define U3_RX_Pin GPIO_PIN_9
