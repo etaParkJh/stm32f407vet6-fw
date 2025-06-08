@@ -1,0 +1,17 @@
+../Application/log.c:16:17:GetDataCount	2
+../Application/log.c:28:17:WriteToBuffer	3
+../Application/log.c:55:17:ReadFromBuffer	3
+../Application/log.c:75:6:DMA_Log_Init	1
+../Application/log.c:87:6:DMA_Log_Printf	2
+../Application/log.c:104:13:StartDMATransmission	5
+../Application/log.c:136:6:DMA_Log_Process	2
+../Application/log.c:146:6:DMA_Log_TxComplete	1
+../Application/log.c:157:6:DMA_Log_Status	2
+../Application/log.c:167:6:DMA_Log_Flush	4
+../Application/log.c:184:6:DMA_Log_Simple_Test	2
+../Application/log.c:213:6:DMA_Log_Performance_Test	3
+../Application/log.c:245:6:Safe_Performance_Test	3
+../Application/log.c:316:6:Realtime_Performance_Test	7
+../Application/log.c:395:6:CPU_Usage_Test	7
+../Application/log.c:475:6:Comprehensive_Performance_Test	1
+../Application/log.c:510:6:Quick_Validation_Test	3

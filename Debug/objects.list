@@ -1,3 +1,4 @@
+"./Application/log.o"
 "./Application/w25q128.o"
 "./Core/Src/dma.o"
 "./Core/Src/gpio.o"

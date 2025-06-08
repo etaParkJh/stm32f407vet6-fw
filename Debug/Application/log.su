@@ -1,0 +1,17 @@
+../Application/log.c:16:17:GetDataCount	4	static
+../Application/log.c:28:17:WriteToBuffer	32	static,ignoring_inline_asm
+../Application/log.c:55:17:ReadFromBuffer	24	static,ignoring_inline_asm
+../Application/log.c:75:6:DMA_Log_Init	8	static
+../Application/log.c:87:6:DMA_Log_Printf	144	static
+../Application/log.c:104:13:StartDMATransmission	24	static
+../Application/log.c:136:6:DMA_Log_Process	8	static
+../Application/log.c:146:6:DMA_Log_TxComplete	8	static
+../Application/log.c:157:6:DMA_Log_Status	8	static
+../Application/log.c:167:6:DMA_Log_Flush	16	static
+../Application/log.c:184:6:DMA_Log_Simple_Test	16	static
+../Application/log.c:213:6:DMA_Log_Performance_Test	32	static
+../Application/log.c:245:6:Safe_Performance_Test	56	static
+../Application/log.c:316:6:Realtime_Performance_Test	64	static
+../Application/log.c:395:6:CPU_Usage_Test	56	static
+../Application/log.c:475:6:Comprehensive_Performance_Test	8	static
+../Application/log.c:510:6:Quick_Validation_Test	32	static

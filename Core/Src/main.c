@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "w25q128.h"
+#include "log.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -63,6 +64,15 @@ int _write(int file, char *ptr, int len)
 	HAL_UART_Transmit(&huart3, (uint8_t*)ptr, len, 100);
 	return len;
 }
+
+void Debug_DMA_State(void) {
+    extern UART_HandleTypeDef huart3;
+    printf("UART State: %d\n", huart3.gState);
+    if (huart3.hdmatx) {
+        printf("DMA State: %d\n", huart3.hdmatx->State);
+    }
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -100,13 +110,21 @@ int main(void)
   /* USER CODE BEGIN 2 */
   printf("Application Start\r\n");
   W25Q128_Init();
+  // DMA 로그 초기화
+  DMA_Log_Init();
+
   Test_W25Q128();
+
+  Comprehensive_Performance_Test();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	// DMA 처리 (필수!)
+	DMA_Log_Process();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -160,7 +178,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+// main.c에 이 함수가 있는지 확인
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart == &huart3) {
+        DMA_Log_TxComplete();  // ← 이게 호출 안 됨
+    }
+}
 /* USER CODE END 4 */
 
 /**
