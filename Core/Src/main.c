@@ -112,15 +112,13 @@ int main(void)
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   printf("Application Start\r\n");
-  W25Q128_Init();
-  // DMA 로그 초기화
-  DMA_Log_Init();
-  Test_W25Q128();
-  // 온도 모니터링 데모
-  Temperature_Monitoring_Demo();
-  // 경보 시스템 데모
-  Temperature_Alert_System();
 
+  W25Q128_Init();
+  log_init();
+  temp_init();
+//  Test_W25Q128();
+
+  uint32_t pre_time = HAL_GetTick();
 
   /* USER CODE END 2 */
 
@@ -128,8 +126,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  // 온도 로그 처리
-	  Temp_Log_Process();
+    temp_process();
+	log_process();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -187,7 +185,7 @@ void SystemClock_Config(void)
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
     if (huart == &huart3) {
-        DMA_Log_TxComplete();  // ← 이게 호출 안 됨
+        log_tx_complete();  // ← 이게 호출 안 됨
     }
 }
 

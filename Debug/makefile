@@ -67,8 +67,8 @@ all: main-build
 main-build: stm32f407vet6-fw.elf secondary-outputs
 
 # Tool invocations
-stm32f407vet6-fw.elf stm32f407vet6-fw.map: $(OBJS) $(USER_OBJS) C:\workspace\Develop\ST\workspace\stm32f407vet6-fw\STM32F407VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "stm32f407vet6-fw.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\workspace\Develop\ST\workspace\stm32f407vet6-fw\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407vet6-fw.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+stm32f407vet6-fw.elf stm32f407vet6-fw.map: $(OBJS) $(USER_OBJS) D:\develop\STM32\stm32f407vet6-fw\STM32F407VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "stm32f407vet6-fw.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\develop\STM32\stm32f407vet6-fw\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407vet6-fw.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

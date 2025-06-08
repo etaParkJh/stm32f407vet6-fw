@@ -1,9 +1,6 @@
-../Application/temperature.c:15:6:Temp_DMA_Init	8	static
-../Application/temperature.c:32:6:Temp_DMA_Start	16	static
-../Application/temperature.c:49:6:Temp_DMA_Stop	8	static
-../Application/temperature.c:58:14:Convert_ADC_to_Celsius	24	static
-../Application/temperature.c:72:7:Temp_Get_Celsius	24	static
-../Application/temperature.c:95:6:Temp_Log_Process	24	static
-../Application/temperature.c:117:6:HAL_ADC_ConvCpltCallback	16	static
-../Application/temperature.c:135:6:Temperature_Monitoring_Demo	64	static
-../Application/temperature.c:207:6:Temperature_Alert_System	32	static
+../Application/temperature.c:15:6:temp_init	16	static
+../Application/temperature.c:30:6:temp_dma_stop	8	static
+../Application/temperature.c:39:14:convert_adc_to_celsius	24	static
+../Application/temperature.c:53:7:temp_get_celsius	24	static
+../Application/temperature.c:76:6:temp_process	24	static
+../Application/temperature.c:98:6:HAL_ADC_ConvCpltCallback	16	static

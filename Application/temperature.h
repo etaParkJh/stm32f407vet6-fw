@@ -1,6 +1,5 @@
-
 /**
- * @file adc_dma_temp_log.h
+ * @file temperature.h
  * @brief ADC DMA 온도 측정 + DMA 로그 시스템
  */
 
@@ -23,13 +22,9 @@
 #define TEMP_ADC_MAX        4095.0f // 12비트 ADC 최대값
 
 /* 함수 선언 */
-void Temp_DMA_Init(void);
-void Temp_DMA_Start(void);
-void Temp_DMA_Stop(void);
-float Temp_Get_Celsius(void);
-void Temp_Log_Process(void);
-uint8_t Get_Adc_Conv_Complete(void);
-void Temperature_Monitoring_Demo();
-void Temperature_Alert_System();
-void Temp_Log_Process(void);
-#endif /* TEMPERATURE_H_ */
+void temp_init(void);
+void temp_dma_stop(void);
+float temp_get_celsius(void);
+void temp_process(void);
+
+#endif /* TEMPERATURE_H */

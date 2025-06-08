@@ -1,27 +1,21 @@
-#ifndef LOG_H_
-#define LOG_H_
+#ifndef LOG_H
+#define LOG_H
 
-#include "stm32f4xx_hal.h"
-#include <stdint.h>
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
 #include <string.h>
+#include "stm32f4xx_hal.h"  // HAL 라이브러리 (MCU에 따라 변경)
 
-/* 설정 */
-#define DMA_LOG_BUFFER_SIZE   512    // 작게 시작
-#define DMA_LOG_MAX_MESSAGE   128    // 한 번에 보낼 최대 크기
+/* 매크로 정의 */
+#define DMA_LOG_BUFFER_SIZE     2048    // 순환 버퍼 크기
+#define DMA_LOG_MAX_MESSAGE     256     // 최대 메시지 크기
 
 /* 함수 선언 */
-void DMA_Log_Init(void);
-void DMA_Log_Printf(const char* format, ...);
-void DMA_Log_Process(void);
-void DMA_Log_Simple_Test(void);
-void DMA_Log_Performance_Test(void);
-void Safe_Performance_Test(void);
-void Realtime_Performance_Test(void);
-void CPU_Usage_Test(void);
-void Comprehensive_Performance_Test(void);
-void Quick_Validation_Test(void);
-void DMA_Log_TxComplete(void);
-void DMA_Log_Flush(void);
-#endif /* LOG_H_ */
+void log_init(void);
+void log_printf(const char* format, ...);
+void log_process(void);
+void log_tx_complete(void);
+void log_status(void);
+void log_flush(void);
+
+#endif /* LOG_H */
