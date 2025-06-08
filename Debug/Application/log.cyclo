@@ -12,6 +12,6 @@
 ../Application/log.c:213:6:DMA_Log_Performance_Test	3
 ../Application/log.c:245:6:Safe_Performance_Test	3
 ../Application/log.c:316:6:Realtime_Performance_Test	7
-../Application/log.c:395:6:CPU_Usage_Test	7
-../Application/log.c:475:6:Comprehensive_Performance_Test	1
-../Application/log.c:510:6:Quick_Validation_Test	3
+../Application/log.c:395:6:CPU_Usage_Test	6
+../Application/log.c:470:6:Comprehensive_Performance_Test	1
+../Application/log.c:505:6:Quick_Validation_Test	3

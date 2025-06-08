@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "dma.h"
 #include "spi.h"
 #include "usart.h"
@@ -27,6 +28,7 @@
 /* USER CODE BEGIN Includes */
 #include "w25q128.h"
 #include "log.h"
+#include "temperature.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -107,15 +109,18 @@ int main(void)
   MX_DMA_Init();
   MX_USART3_UART_Init();
   MX_SPI2_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   printf("Application Start\r\n");
   W25Q128_Init();
   // DMA 로그 초기화
   DMA_Log_Init();
-
   Test_W25Q128();
+  // 온도 모니터링 데모
+  Temperature_Monitoring_Demo();
+  // 경보 시스템 데모
+  Temperature_Alert_System();
 
-  Comprehensive_Performance_Test();
 
   /* USER CODE END 2 */
 
@@ -123,8 +128,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	// DMA 처리 (필수!)
-	DMA_Log_Process();
+	  // 온도 로그 처리
+	  Temp_Log_Process();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -185,6 +190,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
         DMA_Log_TxComplete();  // ← 이게 호출 안 됨
     }
 }
+
 /* USER CODE END 4 */
 
 /**

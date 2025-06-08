@@ -22,4 +22,6 @@ void Realtime_Performance_Test(void);
 void CPU_Usage_Test(void);
 void Comprehensive_Performance_Test(void);
 void Quick_Validation_Test(void);
+void DMA_Log_TxComplete(void);
+void DMA_Log_Flush(void);
 #endif /* LOG_H_ */

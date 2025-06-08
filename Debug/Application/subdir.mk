@@ -6,14 +6,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Application/log.c \
+../Application/temperature.c \
 ../Application/w25q128.c 
 
 OBJS += \
 ./Application/log.o \
+./Application/temperature.o \
 ./Application/w25q128.o 
 
 C_DEPS += \
 ./Application/log.d \
+./Application/temperature.d \
 ./Application/w25q128.d 
 
 
@@ -24,7 +27,7 @@ Application/%.o Application/%.su Application/%.cyclo: ../Application/%.c Applica
 clean: clean-Application
 
 clean-Application:
-	-$(RM) ./Application/log.cyclo ./Application/log.d ./Application/log.o ./Application/log.su ./Application/w25q128.cyclo ./Application/w25q128.d ./Application/w25q128.o ./Application/w25q128.su
+	-$(RM) ./Application/log.cyclo ./Application/log.d ./Application/log.o ./Application/log.su ./Application/temperature.cyclo ./Application/temperature.d ./Application/temperature.o ./Application/temperature.su ./Application/w25q128.cyclo ./Application/w25q128.d ./Application/w25q128.o ./Application/w25q128.su
 
 .PHONY: clean-Application
 
